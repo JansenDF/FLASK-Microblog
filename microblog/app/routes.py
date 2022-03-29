@@ -15,7 +15,7 @@ def index():
     posts = [
         {
             'author': 'Jansen',
-            'body': 'Gosto muito de violão!'
+            'body': 'Gosto muito de guitarra!'
         },
         {
             'author': 'Daniele',
