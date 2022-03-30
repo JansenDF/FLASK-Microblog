@@ -11,11 +11,11 @@ from datetime import datetime
 @login_required
 
 def index():
-    user = {'username': 'Jansen'}
+    user = {'username': 'JANSEN'}
     posts = [
         {
             'author': 'Jansen',
-            'body': 'Gosto muito de guitarra!'
+            'body': 'Gosto muito de bateria!'
         },
         {
             'author': 'Daniele',
