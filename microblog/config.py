@@ -21,3 +21,5 @@ class Config(object):
     MAIL_USERNAME = 'developer.jansen@gmail.com'
     MAIL_PASSWORD = 'devjansen'
     ADMINS = ['developer.jansen@gmail.com', 'jansen.soares@hotmail.com']
+
+    POST_PER_PAGE = 5

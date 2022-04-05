@@ -1,0 +1,117 @@
+2022-04-05 18:05:55,794 ERROR: Exception on /user/Jansen [GET] [in /home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
+Traceback (most recent call last):
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
+    self.dialect.do_execute(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.InterfaceError: Error binding parameter 0 - probably unsupported type.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/routes.py", line 64, in user
+    posts = Post.query.get(user)
+  File "<string>", line 2, in get
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/util/deprecations.py", line 401, in warned
+    return fn(*args, **kwargs)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 943, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 947, in _get_impl
+    return self.session._get_impl(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 2892, in _get_impl
+    return db_load_fn(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 530, in load_on_pk_identity
+    session.execute(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1692, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1620, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1487, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1851, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2032, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
+    self.dialect.do_execute(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type.
+[SQL: SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
+FROM post 
+WHERE post.id = ?]
+[parameters: (<User Jansen, e-mail jansen.lima.df@gmail.com.>,)]
+(Background on this error at: https://sqlalche.me/e/14/rvf5)
+2022-04-05 18:05:56,421 ERROR: Exception on /user/Jansen [GET] [in /home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
+Traceback (most recent call last):
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
+    self.dialect.do_execute(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.InterfaceError: Error binding parameter 0 - probably unsupported type.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/routes.py", line 64, in user
+    posts = Post.query.get(user)
+  File "<string>", line 2, in get
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/util/deprecations.py", line 401, in warned
+    return fn(*args, **kwargs)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 943, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 947, in _get_impl
+    return self.session._get_impl(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 2892, in _get_impl
+    return db_load_fn(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 530, in load_on_pk_identity
+    session.execute(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1692, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1620, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1487, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1851, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2032, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
+    self.dialect.do_execute(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type.
+[SQL: SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
+FROM post 
+WHERE post.id = ?]
+[parameters: (<User Jansen, e-mail jansen.lima.df@gmail.com.>,)]
+(Background on this error at: https://sqlalche.me/e/14/rvf5)
+2022-04-05 18:08:19,817 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:46]
