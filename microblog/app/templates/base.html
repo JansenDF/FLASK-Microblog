@@ -1,22 +1,9 @@
-<!-- extends significa que está página é uma extensão de outra. Neste caso, extende bootstrap/base.html -->
-{% extends "bootstrap/base.html" %}
+{% extends 'bootstrap/base.html' %}
 
-<!-- Bloco reservado para o Título da página. Possue IF/ELSE para verificar se o título já está definido. -->
 {% block title %}
-    {% if title %}
-        {{ title }} - Microblog
-    {% else %}
-        Welcome to Microblog
-    {% endif %}
-
+    {% if title %}{{ title }} - Microblog{% else %}{{ _('Welcome to Microblog') }}{% endif %}
 {% endblock %}
 
-{% block scripts %}
-    {{ super() }}
-    {{ moment.include_moment() }}
-{% endblock %}
-
-<!-- Bloco reservado para a barra de navegação -->
 {% block navbar %}
     <nav class="navbar navbar-default">
         <div class="container">
@@ -31,15 +18,15 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url_for('index') }}">Home</a></li>
-                    <li><a href="{{ url_for('explore') }}">Explore</a></li>
+                    <li><a href="{{ url_for('index') }}">{{ _('Home') }}</a></li>
+                    <li><a href="{{ url_for('explore') }}">{{ _('Explore') }}</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_anonymous %}
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('login') }}">{{ _('Login') }}</a></li>
                     {% else %}
-                    <li><a href="{{ url_for('user', username=current_user.username) }}">Profile</a></li>
-                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <li><a href="{{ url_for('user', username=current_user.username) }}">{{ _('Profile') }}</a></li>
+                    <li><a href="{{ url_for('logout') }}">{{ _('Logout') }}</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -47,22 +34,23 @@
     </nav>
 {% endblock %}
 
-<!-- Block definido para exibir alertas no topo da página e, logo abaixo, o conteúdo das páginas que herdarão está página. -->
 {% block content %}
     <div class="container">
         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                <div class="alert alert-info" role="alert">
-                    {{message}}
-                </div>
-                {% endfor %}
-            {% endif %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
         {% endwith %}
 
-        <!-- o conteúdo do aplicativo precisa ser fornecido no bloco app_content abaixo-->
-        {% block app_content %}
-    
-        {% endblock %}
+        {# application content needs to be provided in the app_content block #}
+        {% block app_content %}{% endblock %}
     </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    {{ moment.include_moment() }}
+    {{ moment.lang(g.locale) }}
 {% endblock %}

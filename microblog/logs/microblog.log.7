@@ -1,4 +1,4 @@
-2022-04-05 18:08:23,566 ERROR: Exception on /user/Jansen [GET] [in /home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
+2022-04-05 18:23:32,205 ERROR: Exception on /user/Jansen [GET] [in /home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
 Traceback (most recent call last):
   File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
     response = self.full_dispatch_request()
@@ -11,21 +11,10 @@ Traceback (most recent call last):
   File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
   File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/routes.py", line 64, in user
-    posts = Post.query.get(current_user)
-  File "<string>", line 2, in get
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/util/deprecations.py", line 401, in warned
-    return fn(*args, **kwargs)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 943, in get
-    return self._get_impl(ident, loading.load_on_pk_identity)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 947, in _get_impl
-    return self.session._get_impl(
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 2821, in _get_impl
-    primary_key_identity = util.to_list(
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/util/_collections.py", line 839, in to_list
-    return list(x)
-TypeError: 'User' object is not iterable
-2022-04-05 18:10:23,001 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:46]
-2022-04-05 18:10:26,038 ERROR: Exception on /user/Jansen [GET] [in /home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
+    posts = Post.query.filter(username=current_user)
+TypeError: filter() got an unexpected keyword argument 'username'
+2022-04-05 18:24:18,064 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:46]
+2022-04-05 18:24:20,798 ERROR: Exception on /user/Jansen [GET] [in /home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
 Traceback (most recent call last):
   File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
     response = self.full_dispatch_request()
@@ -38,10 +27,10 @@ Traceback (most recent call last):
   File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
   File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/routes.py", line 64, in user
-    posts = Post.query.filter_by(user).all()
+    posts = Post.query.filter_by('Jansen')
 TypeError: filter_by() takes 1 positional argument but 2 were given
-2022-04-05 18:12:06,931 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:46]
-2022-04-05 18:12:10,682 ERROR: Exception on /user/Jansen [GET] [in /home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
+2022-04-05 18:24:44,209 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:46]
+2022-04-05 18:24:46,527 ERROR: Exception on /user/Jansen [GET] [in /home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
 Traceback (most recent call last):
   File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
     response = self.full_dispatch_request()
@@ -53,25 +42,19 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/routes.py", line 66, in user
-    return render_template('user.html', title='Profile', user=user, posts=posts, form=form)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 148, in render_template
-    return _render(
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 128, in _render
-    rv = template.render(context)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1291, in render
-    self.environment.handle_exception()
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 926, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/templates/base.html", line 33, in top-level template code
-    {% block content %}
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/templates/user.html", line 37, in block 'content'
-    {% for post in posts %}
-TypeError: 'NoneType' object is not iterable
-2022-04-05 18:12:20,383 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:46]
-2022-04-05 18:12:22,955 ERROR: Exception on /user/Jansen [GET] [in /home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/routes.py", line 64, in user
+    posts = Post.query.filter_by('Jansen').all()
+TypeError: filter_by() takes 1 positional argument but 2 were given
+2022-04-05 18:25:19,519 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:46]
+2022-04-05 18:28:03,427 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:46]
+2022-04-05 18:28:06,763 ERROR: Exception on /user/Jansen [GET] [in /home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
+Traceback (most recent call last):
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1693, in _entity_namespace_key
+    return getattr(ns, key)
+AttributeError: type object 'Post' has no attribute 'username'
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
     response = self.full_dispatch_request()
@@ -83,21 +66,37 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/routes.py", line 66, in user
-    return render_template('user.html', title='Profile', user=user, posts=posts, form=form)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 148, in render_template
-    return _render(
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 128, in _render
-    rv = template.render(context)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1291, in render
-    self.environment.handle_exception()
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 926, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/templates/base.html", line 33, in top-level template code
-    {% block content %}
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/templates/user.html", line 37, in block 'content'
-    {% for post in posts %}
-TypeError: 'NoneType' object is not iterable
-2022-04-05 18:13:34,576 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:46]
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/routes.py", line 64, in user
+    posts = Post.query.filter_by(username=current_user).all()
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1793, in filter_by
+    clauses = [
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1794, in <listcomp>
+    _entity_namespace_key(from_entity, key) == value
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1695, in _entity_namespace_key
+    util.raise_(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+sqlalchemy.exc.InvalidRequestError: Entity namespace for "post" has no property "username"
+2022-04-05 18:28:58,183 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:46]
+2022-04-05 18:43:26,346 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:46]
+2022-04-05 18:43:29,114 ERROR: Exception on /index [GET] [in /home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
+Traceback (most recent call last):
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/routes.py", line 22, in index
+    posts = current_user.followed_posts().paginate(page, app.config['POSTS_PER_PAGE'], False)
+KeyError: 'POSTS_PER_PAGE'
+2022-04-05 18:45:09,779 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:46]
+2022-04-05 18:46:31,723 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:46]
+2022-04-05 18:47:07,126 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:46]
+2022-04-05 18:47:22,907 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:46]
+2022-04-05 18:47:41,393 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:46]
+2022-04-05 19:04:45,884 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:46]
