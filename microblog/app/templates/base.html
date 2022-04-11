@@ -8,6 +8,12 @@
     {% else %}
         Welcome to Microblog
     {% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    {{ moment.include_moment() }}
 {% endblock %}
 
 <!-- Bloco reservado para a barra de navegação -->
