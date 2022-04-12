@@ -9,6 +9,8 @@ from app.forms import LoginForm, RegistrationForm, EditProfileForm, \
 from app.models import User, Post
 from app.email import send_password_reset_email
 from langdetect import detect, LangDetectException
+from flask import jsonify
+from app.translate import translate
 
 
 @app.before_request
@@ -203,3 +205,8 @@ def unfollow(username):
         return redirect(url_for('user', username=username))
     else:
         return redirect(url_for('index'))
+
+@app.route('/translate')
+@login_required
+def translate_text():
+    return jsonify({'text': translate(request.form['text'], request.form['source_language'], request.form['dest_language'])})

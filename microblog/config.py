@@ -26,5 +26,5 @@ class Config(object):
     
     LANGUAGES = ['en', 'es']
 
-    MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
-    # 5684d7b680d34f46befd1e10dcbf8461
+    MS_TRANSLATOR_KEY = "e0d7c60624044bc8b5183ce3714f5cd4" #não funcionou com variavel de ambiente.
+    # e0d7c60624044bc8b5183ce3714f5cd4

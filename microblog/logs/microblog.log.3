@@ -1,73 +1,4 @@
-2022-04-11 15:56:30,753 ERROR: Exception on /index [GET] [in /home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
-Traceback (most recent call last):
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1525, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1523, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1509, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/routes.py", line 28, in index
-    return render_template('index.html', title='Home', form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 149, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1071, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1000, in get_template
-    return self._load_template(name, globals)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 959, in _load_template
-    template = self.loader.load(self, name, self.make_globals(globals))
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/loaders.py", line 138, in load
-    code = environment.compile(source, name, filename)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 758, in compile
-    self.handle_exception(source=source_hint)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 926, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/templates/index.html", line 5, in template
-    <h1>{{ 'Hi, %(username)s!', username=current_user.username }}!</h1>
-jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got '='
-2022-04-11 15:58:59,138 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:58]
-2022-04-11 15:59:02,408 ERROR: Exception on /index [GET] [in /home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
-Traceback (most recent call last):
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1525, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1523, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1509, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/routes.py", line 28, in index
-    return render_template('index.html', title='Home', form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 149, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1071, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1000, in get_template
-    return self._load_template(name, globals)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 959, in _load_template
-    template = self.loader.load(self, name, self.make_globals(globals))
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/loaders.py", line 138, in load
-    code = environment.compile(source, name, filename)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 758, in compile
-    self.handle_exception(source=source_hint)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 926, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/templates/index.html", line 6, in template
-    <h1>{{ 'Hi, %(username)s!', username=current_user.username }}!</h1>
-jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got '='
-2022-04-11 16:03:15,783 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:58]
-2022-04-11 16:06:01,640 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:58]
-2022-04-11 16:06:19,641 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:58]
-2022-04-11 16:22:23,067 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:58]
-2022-04-11 16:23:38,771 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:58]
-2022-04-11 16:35:37,329 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:58]
-2022-04-11 16:35:45,199 ERROR: Exception on /user/JansenDF [GET] [in /home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
+2022-04-11 16:39:20,597 ERROR: Exception on /user/JansenDF [GET] [in /home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
 Traceback (most recent call last):
   File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
     response = self.full_dispatch_request()
@@ -81,20 +12,83 @@ Traceback (most recent call last):
     return func(*args, **kwargs)
   File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/routes.py", line 77, in user
     return render_template('user.html', title='Profile', user=user, posts=posts.items, next_url=next_url, prev_url=prev_url, form=form)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 149, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1071, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1000, in get_template
-    return self._load_template(name, globals)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 959, in _load_template
-    template = self.loader.load(self, name, self.make_globals(globals))
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/loaders.py", line 138, in load
-    code = environment.compile(source, name, filename)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 758, in compile
-    self.handle_exception(source=source_hint)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 148, in render_template
+    return _render(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 128, in _render
+    rv = template.render(context)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1291, in render
+    self.environment.handle_exception()
   File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 926, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/templates/user.html", line 8, in template
-    <h1>{{ _('User: ', user.username }}</h1>
-jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ')'
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/templates/base.html", line 2, in top-level template code
+    {% extends "bootstrap/base.html" %}
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
+    {% block content -%}
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/templates/base.html", line 64, in block 'content'
+    {% block app_content %}
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/templates/user.html", line 8, in block 'app_content'
+    <h1>{{ _('%User: %(user.username)') }}</h1>
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/ext.py", line 167, in _gettext_alias
+    return __context.call(__context.resolve("gettext"), *args, **kwargs)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/ext.py", line 179, in gettext
+    return rv % variables  # type: ignore
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/markupsafe/__init__.py", line 115, in __mod__
+    return self.__class__(super().__mod__(arg))
+ValueError: unsupported format character 'U' (0x55) at index 1
+2022-04-11 16:39:34,890 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:58]
+2022-04-11 16:39:36,093 ERROR: Exception on /user/JansenDF [GET] [in /home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
+Traceback (most recent call last):
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/routes.py", line 77, in user
+    return render_template('user.html', title='Profile', user=user, posts=posts.items, next_url=next_url, prev_url=prev_url, form=form)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 148, in render_template
+    return _render(
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 128, in _render
+    rv = template.render(context)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1291, in render
+    self.environment.handle_exception()
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 926, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/templates/base.html", line 2, in top-level template code
+    {% extends "bootstrap/base.html" %}
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
+    {% block content -%}
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/templates/base.html", line 64, in block 'content'
+    {% block app_content %}
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/app/templates/user.html", line 8, in block 'app_content'
+    <h1>{{ _('User: %(user.username)') }}</h1>
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/ext.py", line 167, in _gettext_alias
+    return __context.call(__context.resolve("gettext"), *args, **kwargs)
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/jinja2/ext.py", line 179, in gettext
+    return rv % variables  # type: ignore
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/markupsafe/__init__.py", line 115, in __mod__
+    return self.__class__(super().__mod__(arg))
+  File "/home/desenvolvimento/Documentos/projetos/flask/microblog/venv/lib/python3.9/site-packages/markupsafe/__init__.py", line 272, in __getitem__
+    return _MarkupEscapeHelper(self.obj[item], self.escape)
+KeyError: 'user.username'
+2022-04-11 16:40:18,178 INFO: Microblog startup [in /home/desenvolvimento/Documentos/projetos/flask/microblog/app/__init__.py:58]
