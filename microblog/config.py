@@ -20,3 +20,5 @@ class Config(object):
     MS_TRANSLATOR_KEY = "e0d7c60624044bc8b5183ce3714f5cd4" #não funcionou com variavel de ambiente.
     # e0d7c60624044bc8b5183ce3714f5cd4
     POSTS_PER_PAGE = 25
+
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
