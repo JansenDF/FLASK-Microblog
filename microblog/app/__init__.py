@@ -76,7 +76,7 @@ def create_app(config_class=Config):
 
         app.logger.setLevel(logging.INFO)
         app.logger.info('Microblog startup')
-        
+
     return app
 
 
@@ -85,4 +85,4 @@ def get_locale():
     return request.accept_languages.best_match(current_app.config['LANGUAGES'])
 
 
-from app import models
+from app import models, routes, errors
